@@ -1,0 +1,90 @@
+.main-footer {
+  color: black;
+  background: transparent;
+  padding-top: 3em;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.col-sm {
+  text-align: center;
+}
+
+.col1-header {
+  font-family: "CrimsonTextSemiBold";
+  font-weight: 500;
+  background: #f9f995;
+  background: repeating-radial-gradient(
+    ellipse farthest-corner at center center,
+    #f9f995 0%,
+    #b04900 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.col2-header {
+  font-family: "CrimsonTextSemiBold";
+  font-weight: 500;
+  background: #f9f995;
+  background: repeating-radial-gradient(
+    ellipse farthest-corner at center center,
+    #f9f995 42%,
+    #b04900 85%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.col3-header {
+  font-family: "CrimsonTextSemiBold";
+  font-weight: 500;
+  background: #f9f995;
+  background: repeating-radial-gradient(
+    ellipse farthest-corner at center center,
+    #f9f995 30%,
+    #b04900 85%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.col1-list {
+  font-family: "CrimsonTextSemiBold";
+  font-weight: 500;
+  background: #f9f995;
+  background: repeating-radial-gradient(
+    ellipse farthest-corner at center center,
+    #f9f995 35%,
+    #b04900 90%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.col2-list {
+  font-family: "CrimsonTextSemiBold";
+  font-weight: 500;
+  background: #f9f995;
+  background: repeating-radial-gradient(
+    ellipse farthest-corner at center center,
+    #f9f995 10%,
+    #b04900 50%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.col3-list {
+  font-family: "CrimsonTextSemiBold";
+  font-weight: 500;
+  background: #f9f995;
+  background: repeating-radial-gradient(
+    ellipse farthest-corner at center center,
+    #f9f995 35%,
+    #b04900 90%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

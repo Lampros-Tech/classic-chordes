@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  BrowserRouter,
+} from "react-router-dom";
+import NavBar from "./components/navbar/navbar";
+import Home from "./components/home/home";
+import Player from "./components/player/player";
+import Explore from "./components/explore/explore";
+import Streaming from "./components/stream/stream";
+// import Footer from "./components/footer/footer";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <>
+        <Router>
+          <NavBar />
+          <div className="pages">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/piano" element={<Player />} />
+              <Route path="/explore" element={<Explore />} />
+              <Route path="/streaming" element={<Streaming />} />
+            </Routes>
+          </div>
+        </Router>
+      </>
+      <br />
+      <BrowserRouter />
+      {/* <Footer /> */}
     </div>
   );
-}
+};
 
 export default App;
