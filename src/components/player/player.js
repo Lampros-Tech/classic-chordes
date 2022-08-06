@@ -1,11 +1,11 @@
 import React from "react";
 
-const player = () => {
+const Player = () => {
   return (
-    <div>
+    <div className="player-main">
       <div>player</div>
     </div>
   );
 };
 
-export default player;
+export default Player;

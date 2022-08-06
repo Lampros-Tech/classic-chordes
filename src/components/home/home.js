@@ -1,7 +1,7 @@
 import React from "react";
 import "./home.css";
 
-const home = () => {
+const Home = () => {
   return (
     <div>
       <div>Home</div>
@@ -9,4 +9,4 @@ const home = () => {
   );
 };
 
-export default home;
+export default Home;

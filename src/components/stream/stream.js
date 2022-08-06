@@ -1,6 +1,6 @@
 import React from "react";
 
-const stream = () => {
+const Streaming = () => {
   return (
     <div>
       <div>stream</div>
@@ -8,4 +8,4 @@ const stream = () => {
   );
 };
 
-export default stream;
+export default Streaming;

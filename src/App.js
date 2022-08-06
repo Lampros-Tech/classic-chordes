@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  BrowserRouter,
 } from "react-router-dom";
 import NavBar from "./components/navbar/navbar";
 import Home from "./components/home/home";
@@ -22,7 +21,7 @@ const App = () => {
           <div className="pages">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/piano" element={<Player />} />
+              <Route path="/player" element={<Player />} />
               <Route path="/explore" element={<Explore />} />
               <Route path="/streaming" element={<Streaming />} />
             </Routes>
@@ -30,7 +29,6 @@ const App = () => {
         </Router>
       </>
       <br />
-      <BrowserRouter />
       {/* <Footer /> */}
     </div>
   );

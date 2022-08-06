@@ -1,6 +1,6 @@
 import React from "react";
 
-const explore = () => {
+const Explore = () => {
   return (
     <div>
       <div>explore</div>
@@ -8,4 +8,4 @@ const explore = () => {
   );
 };
 
-export default explore;
+export default Explore;
