@@ -16,8 +16,9 @@ const Home = () => {
             <div className="home-content">
               Unleash The Artist In You, & Make Your Own Web3 Music
             </div>
-
-            <button className="home-button">Play Now</button>
+            <div className="home-button-div">
+              <button className="home-button">Play Now</button>
+            </div>
           </div>
           <div className="home-right">
             <img className="home-img" src={HomeImg} />
