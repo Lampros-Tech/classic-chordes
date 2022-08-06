@@ -1,16 +1,12 @@
 import "./App.css";
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/navbar/navbar";
 import Home from "./components/home/home";
 import Player from "./components/player/player";
 import Explore from "./components/explore/explore";
 import Streaming from "./components/stream/stream";
-// import Footer from "./components/footer/footer";
+import Footer from "./components/footer/footer";
 
 const App = () => {
   return (
@@ -29,7 +25,7 @@ const App = () => {
         </Router>
       </>
       <br />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

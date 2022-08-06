@@ -20,6 +20,7 @@
 
 .innerbg {
   background: linear-gradient(45deg, #36314a, #252080, #694179);
+  opacity: 0.8;
   background-size: 400%;
   animation: gradient 15s ease infinite;
   height: 500px;
@@ -29,6 +30,7 @@
   align-self: center;
   margin: 0 auto;
   display: flex;
+  box-shadow: rgba(0, 0, 0, 0.223) 5px 8px 10px;
 }
 
 @keyframes gradient {
@@ -50,8 +52,8 @@
 
 .home-logo {
   color: #fefcff;
-  font-size: 70px;
-  font-family: "Gilmer-Light";
+  font-size: 50px;
+  font-family: "FontsFree";
   padding-left: 10px;
   align-items: center;
   text-align: center;
@@ -76,23 +78,19 @@
 }
 
 .home-button {
-  height: 50px;
-  width: 150px;
   background: rgb(174, 140, 254);
-  background: linear-gradient(
-    90deg,
-    rgba(174, 140, 254, 1) 50%,
-    rgba(116, 108, 254, 1) 100%
-  );
-  color: #fefcff;
-  font-size: x-large;
-  font-family: "Gilmer-Light";
+  background: linear-gradient(180deg, #242132 50%, #ae8cfa 100%);
+  color: #ae8cfe;
+  font-size: 15px;
+  font-family: "FontsFree";
   border-radius: 20px;
   border: 0px;
   margin-top: 80px;
   text-align: center;
   margin: 0 auto;
   cursor: pointer;
+  white-space: nowrap;
+  padding: 5px 10px;
 }
 
 .home-right {
