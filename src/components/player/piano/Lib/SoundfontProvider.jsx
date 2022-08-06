@@ -47,7 +47,9 @@ class SoundfontProvider extends React.Component {
       format: this.props.format,
       soundfont: this.props.soundfont,
       nameToUrl: (name, soundfont, format) => {
+        console.log(name)
         return `${this.props.hostname}/${soundfont}/${name}-${format}.js`;
+        // return `${this.props.hostname}/${soundfont}/overdriven_guitar-${format}.js`;
       },
     }).then(instrument => {
       this.setState({
