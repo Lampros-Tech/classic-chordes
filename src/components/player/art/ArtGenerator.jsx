@@ -3,6 +3,8 @@ import { css } from "emotion";
 import SimplexNoise from "simplex-noise";
 import RandomSeed from "random-seed";
 import chroma from "chroma-js";
+import { NFTStorage } from "nft.storage";
+import env from "react-dotenv";
 
 const DEVICE_PIXEL_RATIO = window.devicePixelRatio;
 const NUM_ROWS = 360;
@@ -71,13 +73,16 @@ function generateFlowField() {
 const flowField = generateFlowField();
 
 const ArtGenerator = ({ notes }) => {
+    const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDdmOGI1M0M1ZmRDNTlhNTBGN0I2RWI2QjA2NTZiMjYzZTJBMUI2NUYiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY1OTg4MDkxNTcyNSwibmFtZSI6IkxhbXByb3MifQ.LyzsRQmfbTEYvIld2sRZ1dhX5_woxQAMGRlC9AAlNDU";
+    // console.log(TOKEN);
     const [showNft, setShowNft] = useState(false);
+    const [canvasImage, setCanvasImage] = useState(null);
 
     const canvasRef = useRef();
     const [stroke, setStroke] = useState(Math.floor((Math.random() * 1000) + 1));
     const [lineLength, setLineLength] = useState(Math.floor((Math.random() * 1000) + 1));
 
-    useEffect(() => {
+    const genImage = async() => {
         const canvas = canvasRef.current;
         if (!canvas) {
             return;
@@ -126,6 +131,24 @@ const ArtGenerator = ({ notes }) => {
             ctx.stroke();
             ctx.closePath();
         }
+
+        var target = new Image();
+        target.src = canvas.toDataURL();
+        setCanvasImage(target.src);
+        const client = new NFTStorage({token:TOKEN});
+        const genImage = new File([target.src], 'nft.png', {type:'image/png'});
+        const metadata = await client.store({
+            name: "name",
+            description: "Some Description",
+            image: genImage
+        })
+
+        console.log(metadata)
+
+    }
+
+    useEffect(() => {
+        genImage();
     }, [stroke, lineLength]);
 
     const onStrokeChange = useCallback((e) => {
@@ -142,9 +165,9 @@ const ArtGenerator = ({ notes }) => {
         setShowNft(true);
     };
 
-    useEffect(()=>{
-        console.log(canvasRef.current);
-    },[canvasRef.current])
+    useEffect(() => {
+        console.log(canvasImage);
+    }, [canvasImage])
 
     return (
         <div>
@@ -161,7 +184,7 @@ const ArtGenerator = ({ notes }) => {
             {
                 showNft
                     ?
-                    <div className="nft-box">
+                    <div className="nft-box" disabled>
                         <div className="nft-holder">
                             <div
                                 className={css`
@@ -176,7 +199,16 @@ const ArtGenerator = ({ notes }) => {
                                     className={css`
                                     transform: scale(0.4);
                                     `}
+                                    id="Canvas1"
                                     ref={canvasRef}
+                                // onChange={ (e)=>{
+                                //     var stage = document.getElementById('Canvas1');
+                                //     // var context = stage.getContext("2d");
+                                //     // var convert = stage.toDataURL("image/png").replace("image/png", "image/octet-stream");
+                                //     var target = new Image();
+                                //     target.src = stage.toDataURL("image/png").replace("image/png", "image/octet-stream")
+                                //     setCanvasImage(target.src);
+                                // }}
                                 />
                                 <div
                                     className={css`
@@ -212,6 +244,7 @@ const ArtGenerator = ({ notes }) => {
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                     :
                     null
