@@ -4,6 +4,12 @@
     url("./fonts/gilmer-light/Gilmer-Light.otf") format("truetype");
 }
 
+@font-face {
+  font-family: "FontsFree";
+  src: local("FontsFree"),
+    url("./fonts/FontsFree-Net-Centauri.ttf") format("truetype");
+}
+
 body {
   margin: 0;
 

@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./fonts/gilmer-light/Gilmer-Light.otf";
+import "./fonts/FontsFree-Net-Centauri.ttf";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

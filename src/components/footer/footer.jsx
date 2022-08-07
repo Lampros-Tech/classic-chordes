@@ -1,11 +1,11 @@
 import React from "react";
 import "./footer.css";
 import { ParallaxHover } from "react-parallax-hover";
-import Zora from "../../images/zora.png"
+import Zora from "../../images/zora.svg"
 import Polygon from "../../images/polygon.svg"
 import NftStorage from "../../images/nftstorage.svg"
 import LivePeer from "../../images/livepeer.svg"
-import Lit from "../../images/lit.png"
+import Lit from "../../images/lit.svg"
 
 
 function Footer() {
