@@ -5,6 +5,8 @@ import RandomSeed from "random-seed";
 import chroma from "chroma-js";
 import { NFTStorage } from "nft.storage";
 import env from "react-dotenv";
+import { create } from "ipfs-http-client";
+
 
 const DEVICE_PIXEL_RATIO = window.devicePixelRatio;
 const NUM_ROWS = 360;
@@ -145,6 +147,15 @@ const ArtGenerator = ({ notes }) => {
 
         console.log(metadata)
 
+    };
+
+    const mintNft = () => {
+        try{
+            const ethereum = window.ethereum;
+            console.log(ethereum.request)
+        }catch(e){
+            console.log(e);
+        }
     }
 
     useEffect(() => {
@@ -210,7 +221,7 @@ const ArtGenerator = ({ notes }) => {
                                 //     setCanvasImage(target.src);
                                 // }}
                                 />
-                                <div
+                                {/* <div
                                     className={css`
                                     align-self: stretch;
                                     position: absolute;
@@ -241,7 +252,8 @@ const ArtGenerator = ({ notes }) => {
                                             onChange={onLineLengthChange}
                                         />
                                     </label>
-                                </div>
+                                </div> */}
+                                <button onClick={()=>{mintNft();}}>Mint</button>
                             </div>
                         </div>
                         
