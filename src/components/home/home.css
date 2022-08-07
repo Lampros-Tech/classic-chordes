@@ -2,7 +2,7 @@
   background: linear-gradient(-45deg, #242132, #746cfe, #ae8cfe, #fefcff);
   background-size: 400%;
   animation: gradient 15s ease infinite;
-  height: 1600px;
+  height: 2400px;
   padding-top: 100px;
 }
 
@@ -170,6 +170,17 @@
   box-shadow: rgba(0, 0, 0, 0.3) 5px 8px 12px;
 }
 
+.inst-content {
+  color: #fefcff;
+  margin: 0 auto;
+  font-size: 20px;
+  font-family: "Gilmer-Light";
+  font-weight: 900;
+  text-align: justify;
+  padding: 10px;
+  margin-right: 20px;
+}
+
 .muzieknootjes {
   display: block;
   margin: auto;
@@ -232,4 +243,108 @@
     transform: scale(1.5) translate(100%, -100%);
     opacity: 0;
   }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-family: "FontsFree";
+  margin-top: 100px;
+  color: #fefcff;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+.footer-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 100px;
+  font-size: xx-large;
+}
+
+.imgseperator-top {
+  position: relative;
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 3fr)); */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 100px;
+  cursor: pointer;
+}
+
+.imgseperator-down {
+  margin-top: 50px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 100px;
+  cursor: pointer;
+}
+
+/* .col-sm {
+  text-align: center;
+} */
+
+.zora-img {
+  height: 100px;
+  width: 150px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.polygon-img {
+  height: 100px;
+  width: 250px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.live-img {
+  height: 150px;
+  width: 200px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.nfts-img {
+  height: 100px;
+  width: 200px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.lit-img {
+  height: 120px;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.footer-img-i {
+  padding-top: 30%;
+  text-align: center;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+}
+
+.footer-img-bg {
+  height: 300px;
+  width: 300px;
+  background: rgb(116, 108, 254);
+  background: linear-gradient(
+    180deg,
+    rgba(116, 108, 254, 1) 0%,
+    rgba(174, 140, 254, 1) 50%
+  );
+  border-radius: 20px;
+  align-items: center;
+  margin: 0 auto;
+  flex: 0 0 25%;
+  box-shadow: rgba(0, 0, 0, 0.3) 5px 8px 12px;
 }
