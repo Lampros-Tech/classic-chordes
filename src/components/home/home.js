@@ -199,20 +199,6 @@ const Home = () => {
                 </div>
               </ParallaxHover>
             </section>
-            <section>
-              <ParallaxHover
-                borderRadius={20}
-                scale={5}
-                width={300}
-                height={300}
-              >
-                <div className="footer-img-bg">
-                  <div className="footer-img-i">
-                    <img className="lit-img" src={Lit} />
-                  </div>
-                </div>
-              </ParallaxHover>
-            </section>
           </div>
 
           {/* <div><p className="col-sm">
