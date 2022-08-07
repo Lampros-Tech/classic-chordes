@@ -286,7 +286,7 @@ class Record extends React.Component {
                     </DimensionsProvider>
                 </div>
 
-                <div className='instruments'>
+                {/* <div className='instruments'>
                     <label htmlFor="instrument-label">Select Instrument</label>
                     <select defaultValue={'accordion'} className="instrument-select" onChange={(e) => { this.setState({ instru: e.target.value }) }}>
                         {
@@ -295,17 +295,17 @@ class Record extends React.Component {
                             ))
                         }
                     </select>
-                </div>
+                </div> */}
 
                 <div className="mt-5">
                     <button onClick={this.onClickPlay}>Play</button>
                     <button onClick={this.onClickStop}>Stop</button>
                     <button onClick={this.onClickClear}>Clear</button>
                 </div>
-                <div className="mt-5">
+                {/* <div className="mt-5">
                     <strong>Recorded notes</strong>
                     <div>{JSON.stringify(this.state.recording.events)}</div>
-                </div>
+                </div> */}
             </div>
         );
     }
