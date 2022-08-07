@@ -6,7 +6,7 @@ const DEFAULT_NOTE_DURATION = DURATION_UNIT;
 
 class PianoWithRecording extends React.Component {
   static defaultProps = {
-    notesRecorded: false,
+    notesRecorded: false
   };
 
   state = {
@@ -61,7 +61,6 @@ class PianoWithRecording extends React.Component {
       mode === 'PLAYING' ? currentEvents.map(event => event.midiNumber) : null;
     return (
       <div>
-        
         <Piano
           playNote={this.props.playNote}
           stopNote={this.props.stopNote}
