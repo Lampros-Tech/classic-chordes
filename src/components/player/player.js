@@ -1,17 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Composer from "./piano/Composer";
+import ArtGenerator from "./art/ArtGenerator";
 import "./player.css";
 
 const Player = () => {
+
+  const [notes, setNotes] = useState([]);
+
+  useEffect(() => {
+    if (notes.length > 0) {
+      console.log(notes)
+    }
+  }, [notes])
+
   return (
     <div className="player">
       <div className="player-main">
         <span className="piano-label">PIANO</span>
         <div className="piano-holder">
           <div className="piano-main">
-            <Composer />
+            <Composer setNotes={setNotes} />
           </div>
         </div>
+      </div>
+      <div>
+        <ArtGenerator notes={notes} />
       </div>
     </div>
   );

@@ -23,6 +23,11 @@ const App = () => {
           </div>
         </Router>
       </>
+<<<<<<< Updated upstream
+=======
+      <br />
+      {/* <Footer /> */}
+>>>>>>> Stashed changes
     </div>
   );
 };

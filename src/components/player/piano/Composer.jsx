@@ -27,153 +27,15 @@ const keyboardShortcuts = KeyboardShortcuts.create({
 });
 
 
-const Composer = () => {
+const Composer = ({setNotes}) => {
     return (
         <div>
             <h1>create your own musical notes</h1>
-            <Record />
+            <Record setNotes={setNotes} />
 
         </div>
     )
 };
-
-// function BasicPiano() {
-//     return (
-//         <SoundfontProvider
-//             instrumentName="acoustic_grand_piano"
-//             audioContext={audioContext}
-//             hostname={soundfontHostname}
-//             render={({ isLoading, playNote, stopNote }) => (
-//                 <Piano
-//                     noteRange={noteRange}
-//                     width={300}
-//                     playNote={playNote}
-//                     stopNote={stopNote}
-//                     disabled={isLoading}
-//                     keyboardShortcuts={keyboardShortcuts}
-//                 />
-//             )}
-//         />
-//     );
-// }
-
-// function ResponsivePiano(props) {
-//     const [instru, setInstru] = useState("fiddle");
-//     const [recording, setRecording] = useState({
-//         mode: 'RECORDING',
-//         events: [],
-//         currentTime: 0,
-//         currentEvents: [],
-//     });
-
-//     var scheduledEvents = [];
-
-//     const getRecordingEndTime = () => {
-//         if (recording.events.length === 0) {
-//             return 0;
-//         }
-//         return Math.max(
-//             ...recording.events.map(event => event.time + event.duration),
-//         );
-//     };
-
-//     const onClickPlay = (e) => {
-//         setRecording({
-//             mode: 'PLAYING',
-//         });
-//         const startAndEndTimes = _.uniq(
-//             _.flatMap(recording.e, e => [
-//                 e.time,
-//                 e.time + e.duration,
-//             ]),
-//         );
-//         startAndEndTimes.forEach(time => {
-//             scheduledEvents.push(
-//                 setTimeout(() => {
-//                     const currentEvents = recording.events.filter(event => {
-//                         return event.time <= time && event.time + event.duration > time;
-//                     });
-//                     setRecording({
-//                         currentEvents,
-//                     });
-//                 }, time * 1000),
-//             );
-//         });
-//         // Stop at the end
-//         setTimeout(() => {
-//             onClickStop();
-//         }, getRecordingEndTime() * 1000);
-//     };
-
-//     const onClickStop = (e) => {
-//         scheduledEvents.forEach(scheduledEvent => {
-//             clearTimeout(scheduledEvent);
-//         });
-//         setRecording({
-//             mode: 'RECORDING',
-//             currentEvents: [],
-//         });
-//     };
-
-//     const onClickClear = (e) => {
-
-//     };
-
-//     return (
-//         <>
-//             <DimensionsProvider>
-//                 {({ containerWidth, containerHeight }) => (
-//                     <SoundfontProvider
-//                         instrumentName={instru}
-//                         audioContext={audioContext}
-//                         hostname={soundfontHostname}
-//                         render={({ isLoading, playNote, stopNote }) => (
-//                             // <Piano
-//                             //     noteRange={noteRange}
-//                             //     width={containerWidth}
-//                             //     playNote={playNote}
-//                             //     stopNote={stopNote}
-//                             //     disabled={isLoading}
-//                             //     keyboardShortcuts={keyboardShortcuts}
-//                             //     {...props}
-//                             // />
-//                             <PianoWithRecording
-//                                 recording={recording}
-//                                 setRecording={setRecording}
-//                                 noteRange={noteRange}
-//                                 width={containerWidth}
-//                                 height={containerHeight}
-//                                 playNote={playNote}
-//                                 stopNote={stopNote}
-//                                 disabled={isLoading}
-//                                 keyboardShortcuts={keyboardShortcuts}
-//                             />
-//                         )}
-//                     />
-//                 )}
-
-//             </DimensionsProvider>
-//             <div className='player-options'>
-//                 <div className='instruments'>
-//                     <label htmlFor="instrument-label">Select Instrument</label>
-//                     <select defaultValue={'fiddle'} className="instrument-select" onChange={(e) => { setInstru(e.target.value) }}>
-//                         {
-//                             Fluids.map((i, index) => (
-//                                 <option key={index} value={i}>{i}</option>
-//                             ))
-//                         }
-//                     </select>
-//                 </div>
-//                 <div className="mt-5">
-//                     <button onClick={() => { onClickPlay() }}>Play</button>
-//                     <button onClick={() => { onClickStop() }}>Stop</button>
-//                     <button onClick={() => { onClickClear() }}>Clear</button>
-//                 </div>
-//             </div>
-//         </>
-
-//     );
-// }
 
 class Record extends React.Component {
     state = {
@@ -183,12 +45,13 @@ class Record extends React.Component {
             currentTime: 0,
             currentEvents: [],
         },
-        instru: "accordion",
+        instru: "clavinet",
 
     };
 
     constructor(props) {
         super(props);
+        // console.log(props);
         this.scheduledEvents = [];
     }
 
@@ -196,6 +59,7 @@ class Record extends React.Component {
         if (this.state.recording.events.length === 0) {
             return 0;
         }
+        this.props.setNotes(this.state.recording.events);
         return Math.max(
             ...this.state.recording.events.map(event => event.time + event.duration),
         );
@@ -255,6 +119,7 @@ class Record extends React.Component {
             currentEvents: [],
             currentTime: 0,
         });
+        this.props.setNotes([]);
     };
 
     render() {
@@ -265,7 +130,7 @@ class Record extends React.Component {
                     <DimensionsProvider>
                         {({ containerWidth, containerHeight }) => (
                             <SoundfontProvider
-                                instrumentName={this.state.instru}
+                                instrumentName={"clavinet"}
                                 audioContext={audioContext}
                                 hostname={soundfontHostname}
                                 render={({ isLoading, playNote, stopNote }) => (
