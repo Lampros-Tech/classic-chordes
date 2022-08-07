@@ -18,3 +18,12 @@
 .PianoDarkTheme .ReactPiano__Key--active.ReactPiano__Key--natural {
     background: #0396ca;
 }
+
+.player-options{
+    margin-top: 50px;
+    display: flex;
+}
+
+.instruments{
+    display: block;
+}

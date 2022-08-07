@@ -11,7 +11,6 @@ const Player = () => {
           <div className="piano-main">
             <Composer />
           </div>
-          <div className="piano-control">Controls</div>
         </div>
       </div>
     </div>
