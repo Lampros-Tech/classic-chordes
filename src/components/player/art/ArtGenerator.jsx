@@ -195,7 +195,7 @@ const ArtGenerator = ({ notes }) => {
             {
                 showNft
                     ?
-                    <div className="nft-box" disabled>
+                    <div className="nft-box">
                         <div className="nft-holder">
                             <div
                                 className={css`
@@ -255,8 +255,8 @@ const ArtGenerator = ({ notes }) => {
                                 </div> */}
                                 <button onClick={()=>{mintNft();}}>Mint</button>
                             </div>
+                            <img src={canvasImage} width={200} height={200} />
                         </div>
-                        
                     </div>
                     :
                     null

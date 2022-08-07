@@ -6,6 +6,7 @@ import Home from "./components/home/home";
 import Player from "./components/player/player";
 import Explore from "./components/explore/explore";
 import Streaming from "./components/stream/stream";
+import Profile from "./components/profile/Profile";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
               <Route path="/player" element={<Player />} />
               <Route path="/explore" element={<Explore />} />
               <Route path="/streaming" element={<Streaming />} />
+              <Route path="/profile" element={<Profile />} />
             </Routes>
           </div>
         </Router>

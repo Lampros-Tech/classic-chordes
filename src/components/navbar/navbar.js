@@ -46,7 +46,11 @@ const Navbar = () => {
             <div className="navtextstyle">Stream</div>
           </Link>
         </li>
-        <li className="nav-item"></li>
+        <li className="nav-item">
+        <Link to="/profile" className="nav-link" onClick={closeMenu}>
+            <div className="navtextstyle">Profile</div>
+          </Link>
+        </li>
       </ul>
     </nav>
   );
