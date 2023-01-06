@@ -7,6 +7,10 @@
   pointer-events: none;
 }
 
+ul {
+  padding-left: 0;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -35,4 +39,33 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+a{
+  text-decoration: none !important;
+}
+
+body::-webkit-scrollbar{
+  width: 5px;
+  /* background: linear-gradient(180deg, #251b43 70%, #746cfe); */
+  background-color: #ffffff;
+}
+
+/* body::-webkit-scrollbar-track {
+  background-color: transparent !important;
+} */
+
+body::-webkit-scrollbar-thumb {
+  /* background-color: #251b43; */
+  background: linear-gradient(90deg, #746cfe 10%, #251b43 70%, #746cfe);
+  outline: 3px solid #251b43;
+  border-radius: 10px;
+}
+
+ul{
+  list-style: none;
+}
+
+p{
+  margin: 0;
 }
